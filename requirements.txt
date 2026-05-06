@@ -1,0 +1,4 @@
+django
+djangorestframework
+supabase
+python-dotenv
