@@ -35,3 +35,24 @@ class CurrentUserProfileSerializer(serializers.ModelSerializer):
         ]
 
         read_only_fields = fields
+
+
+
+
+
+class SignUpSerializer(serializers.Serializer):
+    plan = serializers.CharField(max_length=10, default='free')
+    
+    
+    first_name = serializers.CharField(max_length=30)
+    last_name = serializers.CharField(max_length=30)
+    email = serializers.EmailField()
+    password = serializers.CharField(write_only=True, min_length=8)
+
+
+
+class LoginInSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField(write_only=True, min_length=8)
+
+

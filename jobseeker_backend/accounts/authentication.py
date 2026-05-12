@@ -1,25 +1,20 @@
+# accounts/authentication.py
+
 import os
+import requests
 from dotenv import load_dotenv
-from supabase import create_client
+
 from django.contrib.auth.models import User
 from rest_framework.authentication import BaseAuthentication
 from rest_framework.exceptions import AuthenticationFailed
+
 from .models import UserProfile
+
 
 load_dotenv()
 
-
-def get_supabase_client():
-    supabase_url = os.getenv("SUPABASE_URL")
-    supabase_key = os.getenv("SUPABASE_ANON_KEY")
-
-    if not supabase_url or not supabase_key:
-        raise AuthenticationFailed(
-            "Supabase credentials are not configured. "
-            "Set SUPABASE_URL and SUPABASE_ANON_KEY."
-        )
-
-    return create_client(supabase_url, supabase_key)
+SUPABASE_URL = os.environ["SUPABASE_URL"]
+SUPABASE_ANON_KEY = os.environ["SUPABASE_ANON_KEY"]
 
 
 class SupabaseJWTAuthentication(BaseAuthentication):
@@ -28,27 +23,16 @@ class SupabaseJWTAuthentication(BaseAuthentication):
 
         if not header:
             return None
-        
 
         if not header.startswith("Bearer "):
-            raise AuthenticationFailed("Invalid token header. No Bearer prefix.")
-        
+            raise AuthenticationFailed("Invalid authorization header.")
+
         token = header.split(" ", 1)[1]
 
-        supabase = get_supabase_client()
+        supabase_user = self.verify_token_with_supabase(token)
 
-        try:
-            response = supabase.auth.api.get_user(token)
-            supabase_user = response.user
-        except Exception as e:
-            raise AuthenticationFailed(f"Invalid token: {str(e)}")
-        
-        if not supabase_user:
-            raise AuthenticationFailed("Invalid or expired token.")
-        
-
-        supabase_user_id = str(supabase_user.id)
-        email = supabase_user.email
+        supabase_user_id = str(supabase_user["id"])
+        email = supabase_user["email"]
 
         profile = UserProfile.objects.filter(
             supabase_user_id=supabase_user_id
@@ -70,3 +54,21 @@ class SupabaseJWTAuthentication(BaseAuthentication):
         )
 
         return (user, None)
+
+    def verify_token_with_supabase(self, token):
+        url = f"{SUPABASE_URL}/auth/v1/user"
+
+        headers = {
+            "apikey": SUPABASE_ANON_KEY,
+            "Authorization": f"Bearer {token}",
+        }
+
+        response = requests.get(url, headers=headers)
+
+        if response.status_code != 200:
+            raise AuthenticationFailed("Invalid or expired token.")
+
+        return response.json()
+    
+
+    

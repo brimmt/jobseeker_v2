@@ -10,9 +10,6 @@ class UserProfile(models.Model):
         ('premium', 'Premium'),
     ]
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    
-    
     
     user = models.OneToOneField (
         User, 
@@ -26,5 +23,4 @@ class UserProfile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
-    # Add additional fields as needed, e.g.:
-    # bio = models.TextField(blank=True
+    
