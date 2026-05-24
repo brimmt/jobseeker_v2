@@ -67,16 +67,34 @@ function Signup() {
     setStep(2);
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    console.log("Sign up:", {
-      ...formData,
-      tier: selectedTier,
-    });
+    try {
+      const response = await fetch("http://localhost:8000/api/accounts/signup/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          tier: selectedTier,
+        }),
+      });
+
+      const data = await response.json();
+      console.log("Sign up:", data);
+    } catch (error) {
+      console.error("Sign up error:", error);
+    }
   }
 
   const selectedTierData = pricingTiers.find((tier) => tier.id === selectedTier);
+
+  
+  
+
+  
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[var(--background)] px-4 py-12">

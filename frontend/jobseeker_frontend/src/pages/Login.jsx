@@ -1,19 +1,34 @@
 import { useState } from "react";
-import { Mail, Lock, ArrowRight, FileText } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  async function handleSubmit(e) {
+  e.preventDefault();
 
-    console.log("Login:", {
-      email,
-      password,
+  try {
+    const response = await fetch("http://localhost:8000/api/accounts/login/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
     });
+
+    const data = await response.json();
+
+    console.log("Login:", data);
+    navigate("/dashboard");
+  } catch (error) {
+    console.error("Login error:", error);
   }
+}
 
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[var(--background)] p-4">
