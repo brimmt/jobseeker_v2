@@ -95,6 +95,11 @@ function Signup() {
 
      const selectedTierData = pricingTiers.find((tier) => tier.id === selectedTier);
 
+  
+  
+
+  
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-[var(--background)] px-4 py-12">
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[var(--primary)]/5 via-[var(--background)] to-[var(--secondary)]/5" />

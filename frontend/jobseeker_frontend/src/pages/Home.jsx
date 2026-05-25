@@ -11,6 +11,8 @@ function Home() {
       <Hero />
       <Features />
 
+      <Features />
+
     </div>
   );
 }
