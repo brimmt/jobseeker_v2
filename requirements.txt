@@ -2,3 +2,4 @@ django
 djangorestframework
 supabase
 python-dotenv
+django-cors-headers

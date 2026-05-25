@@ -1,19 +1,44 @@
 import { useState } from "react";
 import { Mail, Lock, ArrowRight, FileText } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    console.log("Login:", {
-      email,
-      password,
-    });
-  }
+    try {
+      const response =  await fetch("http://localhost:8000/api/accounts/login/", {
+        method: "POST",
+        headers: {
+    
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          console.error("Login failed:", data);
+          alert("Login failed: " + (data.detail || "Unknown error"));
+          return;
+        }
+
+        console.log("Login:", data);
+        localStorage.setItem("accessToken", data.access);
+        navigate("/dashboard");
+      } catch (error) {
+        console.error("Login error:", error);
+      }
+    }
+        
 
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[var(--background)] p-4">
@@ -23,9 +48,7 @@ function Login() {
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
           <Link to="/" className="mb-6 inline-flex items-center justify-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--primary)] text-white shadow-sm">
-              <FileText className="h-5 w-5" />
-            </div>
+            
 
             <span className="text-xl font-semibold text-[var(--primary)]">
               JobSeeker <span className="text-[var(--secondary)]">AI</span>
