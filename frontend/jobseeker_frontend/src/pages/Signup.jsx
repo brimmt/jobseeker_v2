@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Check, ArrowRight, User, Mail, Lock, Sparkles, FileText } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const pricingTiers = [
   {
@@ -69,29 +69,38 @@ function Signup() {
   }
 
   async function handleSubmit(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const response = await fetch("http://localhost:8000/api/accounts/signup/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          tier: selectedTier,
-        }),
-      });
+  try {
+    const response = await fetch("http://localhost:8000/api/accounts/signup/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...formData,
+        tier: selectedTier,
+      }),
+    });
 
-      const data = await response.json();
-      console.log("Sign up", data);
-      navigate("/dashboard");
-    } catch (error) {
-      console.error("Sign up error:", error);
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.error("Sign up failed:", data);
+      return;
     }
 
-     }
-    
+    console.log("Sign up", data);
+
+    if (data.access) {
+      localStorage.setItem("accessToken", data.access);
+    }
+
+    navigate("/dashboard");
+  } catch (error) {
+    console.error("Sign up error:", error);
+  }
+}
 
      const selectedTierData = pricingTiers.find((tier) => tier.id === selectedTier);
 
