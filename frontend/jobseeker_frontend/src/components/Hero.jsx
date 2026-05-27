@@ -1,5 +1,6 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+import JobseekerAILogo from "../assets/Jobseeker_AI.png";
 
 function Hero() {
   return (
@@ -11,12 +12,12 @@ function Hero() {
         <div className="space-y-8">
           
           <h1 className="text-4xl font-bold leading-tight text-[var(--primary)] md:text-5xl lg:text-6xl">
-            Your AI-powered career assistant
+            Less stress. Better applications. Faster results.
           </h1>
 
           <p className="max-w-2xl text-lg leading-relaxed text-[var(--foreground)]/70 md:text-xl">
-            Build resumes, generate cover letters, organize applications, and
-            streamline your job search with AI.
+            Build resumes, generate cover letters, discover jobs tailored to your resume,
+              and organize applications in one place.
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row">
@@ -48,7 +49,7 @@ function Hero() {
             </div>
 
             <div>
-              <div className="text-2xl font-bold text-[var(--primary)]">AI</div>
+              <div className="text-2xl font-bold text-[var(--primary)]">Eco Focus</div>
               <div className="text-sm text-[var(--foreground)]/60">Assisted Workflow</div>
             </div>
           </div>
@@ -58,14 +59,19 @@ function Hero() {
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[var(--primary)]/20 to-[var(--secondary)]/20 blur-3xl" />
 
           <div className="relative rounded-2xl border border-[var(--border)] bg-white p-6 shadow-2xl">
-            <div className="mb-6 flex items-center gap-3 border-b border-[var(--border)] pb-4">
-              <div className="h-3 w-3 rounded-full bg-red-400" />
-              <div className="h-3 w-3 rounded-full bg-yellow-400" />
-              <div className="h-3 w-3 rounded-full bg-green-400" />
-              <div className="flex-1 text-center text-sm text-[var(--foreground)]/60">
-                JobSeeker AI Dashboard
-              </div>
-            </div>
+            <div className="relative mb-6 h-16 border-b border-[var(--border)]">
+  <div className="absolute left-0 top-1/2 flex -translate-y-1/2 gap-2">
+    <div className="h-3 w-3 rounded-full bg-red-400" />
+    <div className="h-3 w-3 rounded-full bg-yellow-400" />
+    <div className="h-3 w-3 rounded-full bg-green-400" />
+  </div>
+
+  <img
+    src={JobseekerAILogo}
+    alt="JobSeeker AI logo"
+    className="absolute left-1/2 top-1/2 h-50 w-auto -translate-x-1/2 -translate-y-1/2 object-contain"
+  />
+</div>
 
             <div className="space-y-4">
               <DashboardRow
@@ -103,7 +109,7 @@ function Hero() {
 
                   <div>
                     <div className="mb-1 text-sm font-medium text-[var(--primary)]">
-                      AI Suggestion
+                      Resume Insights
                     </div>
                     <div className="text-xs text-[var(--foreground)]/70">
                       Your resume is almost ready. Add stronger project keywords

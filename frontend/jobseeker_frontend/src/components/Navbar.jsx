@@ -1,6 +1,7 @@
 import { Menu, X, FileText } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import JobseekerAILogo from "../assets/Jobseeker_AI.png";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,19 +11,16 @@ function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
+            <img src={JobseekerAILogo} alt="JobSeeker AI logo" className="h-10 md:h-57 w-auto" />
             
-
-            <span className="text-xl font-semibold text-[var(--primary)]">
-              JobSeeker <span className="text-[var(--secondary)]">AI</span>
-            </span>
           </Link>
-
+           
           <div className="hidden items-center gap-8 md:flex">
             <a href="#features" className="text-[var(--foreground)]/70 transition-colors hover:text-[var(--foreground)]">
               Features
             </a>
             <a href="#pricing" className="text-[var(--foreground)]/70 transition-colors hover:text-[var(--foreground)]">
-              Pricing
+              Memberships
             </a>
             <a href="#about" className="text-[var(--foreground)]/70 transition-colors hover:text-[var(--foreground)]">
               About
