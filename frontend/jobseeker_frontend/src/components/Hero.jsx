@@ -71,7 +71,7 @@ function Hero() {
   <img
     src={JobseekerAILogo}
     alt="JobSeeker AI logo"
-    className="absolute left-1/2 top-1/2 h-12 w-auto -translate-x-1/2 -translate-y-1/2 object-contain"
+    className="absolute left-1/2 top-1/2 h-10 w-auto -translate-x-1/2 -translate-y-1/2 object-contain"
   />
 </div>
 
