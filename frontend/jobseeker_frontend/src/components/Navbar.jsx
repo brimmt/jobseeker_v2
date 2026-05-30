@@ -11,7 +11,7 @@ function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
-            <img src={JobseekerAILogo} alt="JobSeeker AI logo" className="h-10 md:h-57 w-auto" />
+            <img src={JobseekerAILogo} alt="JobSeeker AI logo" className="h-10 md:h-12 w-auto" />
             
           </Link>
            
@@ -23,7 +23,7 @@ function Navbar() {
               Memberships
             </a>
             <a href="#dashboard-preview" className="text-[var(--foreground)]/70 transition-colors hover:text-[var(--foreground)]">
-              Demo
+              Dashboard
             </a>
             <a href="#faq" className="text-[var(--foreground)]/70 transition-colors hover:text-[var(--foreground)]">
               FAQ
@@ -66,7 +66,7 @@ function Navbar() {
                 Pricing
               </a>
               <a href="#dashboard-preview" className="text-[var(--foreground)]/70 hover:text-[var(--foreground)]">
-                Demo
+                Dashboard
               </a>
               <a href="#faq" className="text-[var(--foreground)]/70 hover:text-[var(--foreground)]">
                 FAQ
@@ -80,12 +80,13 @@ function Navbar() {
                   Login
                 </Link>
 
-                <Link
-                  to="/signup"
-                  className="rounded-lg bg-[var(--primary)] px-6 py-2 text-center text-white"
-                >
-                  Sign Up
-                </Link>
+                 <button
+              disabled
+              title="Sign up is coming soon!"
+              className="cursor-not-allowed rounded-lg bg-[var(--primary)] px-6 py-2 text-white shadow-sm transition-all hover:bg-[#143252] hover:shadow-md"
+            >
+              Sign Up
+            </button>
               </div>
             </div>
           </div>

@@ -31,12 +31,12 @@ function Hero() {
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
 
-            <Link
-              to="/login"
+            <a
+              href="#dashboard-preview"
               className="rounded-lg border border-[var(--primary)]/20 bg-white px-8 py-4 text-center text-[var(--primary)] shadow-sm transition-all hover:bg-gray-50 hover:shadow-md"
             >
               View Dashboard
-            </Link>
+            </a>
           </div>
 
           <div className="grid max-w-lg grid-cols-3 gap-6 pt-4">
@@ -71,7 +71,7 @@ function Hero() {
   <img
     src={JobseekerAILogo}
     alt="JobSeeker AI logo"
-    className="absolute left-1/2 top-1/2 h-50 w-auto -translate-x-1/2 -translate-y-1/2 object-contain"
+    className="absolute left-1/2 top-1/2 h-12 w-auto -translate-x-1/2 -translate-y-1/2 object-contain"
   />
 </div>
 

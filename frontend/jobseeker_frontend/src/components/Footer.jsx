@@ -1,6 +1,7 @@
 import { Mail} from "lucide-react";
 import LinkedIn from "../assets/linkedin-svgrepo-com.svg";
 import JobseekerAILogo from "../assets/Jobseeker_AI.png";
+import legal from "../pages/Legal";
 
 
 function Footer() {
@@ -13,7 +14,7 @@ function Footer() {
   <img
     src={JobseekerAILogo}
     alt="JobSeeker AI"
-    className="absolute right-7 top-1/2 h-50 w-auto -translate-y-1/2 object-contain"
+    className="absolute left-0 top-1/2 h-15 w-auto -translate-y-1/2 object-contain"
   />
 </div>
 
@@ -74,7 +75,7 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/dashboard" className="text-[var(--foreground)]/70 hover:text-[var(--primary)]">
+                <a href="#dashboard-preview" className="text-[var(--foreground)]/70 hover:text-[var(--primary)]">
                   Dashboard
                 </a>
               </li>
