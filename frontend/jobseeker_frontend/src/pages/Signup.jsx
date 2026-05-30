@@ -181,7 +181,7 @@ function Signup() {
                       : "border border-[var(--primary)]/20 bg-[var(--primary)]/5 text-[var(--primary)] hover:bg-[var(--primary)]/10"
                   }`}
                 >
-                  Get Started
+                  Coming Soon
                 </button>
 
                 <ul className="space-y-3">

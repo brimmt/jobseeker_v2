@@ -22,8 +22,8 @@ function Navbar() {
             <a href="#pricing" className="text-[var(--foreground)]/70 transition-colors hover:text-[var(--foreground)]">
               Memberships
             </a>
-            <a href="#about" className="text-[var(--foreground)]/70 transition-colors hover:text-[var(--foreground)]">
-              About
+            <a href="#dashboard-preview" className="text-[var(--foreground)]/70 transition-colors hover:text-[var(--foreground)]">
+              Demo
             </a>
             <a href="#faq" className="text-[var(--foreground)]/70 transition-colors hover:text-[var(--foreground)]">
               FAQ
@@ -38,12 +38,13 @@ function Navbar() {
               Login
             </Link>
 
-            <Link
-              to="/signup"
-              className="rounded-lg bg-[var(--primary)] px-6 py-2 text-white shadow-sm transition-all hover:bg-[#143252] hover:shadow-md"
+            <button
+              disabled
+              title="Sign up is coming soon!"
+              className="cursor-not-allowed rounded-lg bg-[var(--primary)] px-6 py-2 text-white shadow-sm transition-all hover:bg-[#143252] hover:shadow-md"
             >
               Sign Up
-            </Link>
+            </button>
           </div>
 
           <button
@@ -64,8 +65,8 @@ function Navbar() {
               <a href="#pricing" className="text-[var(--foreground)]/70 hover:text-[var(--foreground)]">
                 Pricing
               </a>
-              <a href="#about" className="text-[var(--foreground)]/70 hover:text-[var(--foreground)]">
-                About
+              <a href="#dashboard-preview" className="text-[var(--foreground)]/70 hover:text-[var(--foreground)]">
+                Demo
               </a>
               <a href="#faq" className="text-[var(--foreground)]/70 hover:text-[var(--foreground)]">
                 FAQ

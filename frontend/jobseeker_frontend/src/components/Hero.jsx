@@ -21,13 +21,15 @@ function Hero() {
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row">
-            <Link
-              to="/signup"
+            <a
+              href="https://www.linkedin.com/company/nevaratech"
+              target="_blank"
+              rel="noreferrer"
               className="group flex items-center justify-center gap-2 rounded-lg bg-[var(--primary)] px-8 py-4 text-white shadow-lg transition-all hover:bg-[#143252] hover:shadow-xl"
             >
-              Get Started Free
+              Stay Updated
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
+            </a>
 
             <Link
               to="/login"

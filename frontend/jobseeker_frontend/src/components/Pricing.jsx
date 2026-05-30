@@ -5,50 +5,50 @@ const plans = [
   {
     name: "Free",
     price: "$0",
-    period: "forever",
-    description: "Perfect for getting started",
+    period: "during beta",
+    description: "Perfect for exploring JobSeeker AI",
     features: [
-      "1 resume generation per month",
-      "3 cover letters per month",
+      "Resume creation",
+      "Cover letter generation",
       "Basic job tracking",
-      "10 saved applications",
+      "Application management",
       "Community support",
     ],
-    cta: "Get Started",
-    popular: false,
-  },
-
-  {
-    name: "Pro",
-    price: "$3.99",
-    period: "per month",
-    description: "Best for active job seekers",
-    features: [
-      "Unlimited resume generation",
-      "Unlimited cover letters",
-      "Advanced job tracking",
-      "Unlimited saved jobs",
-      "Priority support",
-      "Resume optimization",
-    ],
-    cta: "Start Free Trial",
+    cta: "Beta Access",
     popular: true,
   },
 
   {
+    name: "Pro",
+    price: "TBD",
+    period: "after beta",
+    description: "For active job seekers",
+    features: [
+      "Everything in Free",
+      "Resume optimization",
+      "Advanced job tracking",
+      "Career insights",
+      "Priority support",
+      "Early access to new features",
+    ],
+    cta: "Coming Soon",
+    popular: false,
+  },
+
+  {
     name: "Premium",
-    price: "$7.99",
-    period: "per month",
-    description: "For serious professionals",
+    price: "TBD",
+    period: "after beta",
+    description: "For professionals and power users",
     features: [
       "Everything in Pro",
       "Interview preparation",
       "LinkedIn optimization",
-      "Resume review tools",
-      "Career recommendations",
+      "Advanced career recommendations",
       "Dedicated support",
+      "Future premium features",
     ],
-    cta: "Start Free Trial",
+    cta: "Coming Soon",
     popular: false,
   },
 ];
@@ -76,7 +76,8 @@ function Pricing() {
           </h2>
 
           <p className="mx-auto max-w-2xl text-lg text-[var(--foreground)]/70">
-            Start free and upgrade when you need more tools.
+              Beta access is limited while pricing and plan features are finalized.
+
           </p>
 
         </div>
@@ -102,7 +103,7 @@ function Pricing() {
 
                     <Sparkles className="h-3 w-3" />
 
-                    Most Popular
+                    Beta
 
                   </div>
 
@@ -134,16 +135,25 @@ function Pricing() {
 
               </div>
 
-              <Link
-                to="/signup"
-                className={`mb-6 block w-full rounded-lg py-3 text-center font-medium transition-all ${
-                  plan.popular
-                    ? "bg-[var(--primary)] text-white shadow-lg hover:bg-[#143252]"
-                    : "border border-[var(--primary)]/20 bg-[var(--primary)]/5 text-[var(--primary)] hover:bg-[var(--primary)]/10"
-                }`}
-              >
-                {plan.cta}
-              </Link>
+              {plan.name === "Free" ? (
+                  <a
+              href="https://www.linkedin.com/company/nevaratech"
+              target="_blank"
+              rel="noreferrer"
+              className="mb-6 block w-full rounded-lg bg-[var(--primary)] py-3 text-center font-medium text-white shadow-lg transition-all hover:bg-[#143252]"
+            >
+              {plan.cta}
+            </a>
+          ) : (
+            <button
+              type="button"
+              disabled
+              className="mb-6 block w-full cursor-not-allowed rounded-lg border border-gray-200 bg-gray-100 py-3 text-center font-medium text-gray-500"
+              title="Coming soon"
+            >
+              {plan.cta}
+            </button>
+          )}
 
               <ul className="space-y-3">
 

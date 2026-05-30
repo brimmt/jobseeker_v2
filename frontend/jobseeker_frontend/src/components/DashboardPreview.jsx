@@ -19,7 +19,10 @@ const previewApps = [
 
 function DashboardPreview() {
   return (
-    <section className="px-6 py-20 md:py-28">
+    <section 
+    id="dashboard-preview"
+    className="px-6 py-20 md:py-28">
+      
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/10 bg-[var(--primary)]/5 px-4 py-2">

@@ -10,39 +10,39 @@ import {
 const features = [
   {
     icon: FileText,
-    title: "AI Resume Builder",
+    title: "Resume Builder",
     description:
-      "Create professional, ATS-friendly resumes with AI suggestions and templates.",
+      "Create new resumes or improve existing ones with ATS-friendly recommendations and optimization.",
   },
   {
     icon: Mail,
-    title: "AI Cover Letter Generator",
+    title: "Cover Letter Generator",
     description:
-      "Generate personalized cover letters tailored to each application.",
+      "Generate tailored cover letters for each application in seconds.",
   },
   {
     icon: Target,
     title: "Smart Job Tracking",
     description:
-      "Track applications, interviews, and progress from one dashboard.",
+      "Track applications, interviews, offers, and follow-ups from one dashboard.",
   },
   {
     icon: Search,
-    title: "AI Job Search Assistance",
+    title: "Automated Job Discovery",
     description:
-      "Discover jobs aligned to your skills and experience.",
+      "Find opportunities across multiple job boards that match your experience and career goals.",
   },
   {
     icon: FolderKanban,
-    title: "Application Management",
+    title: "Interview Preparation",
     description:
-      "Manage resumes, cover letters, and applications in one workflow.",
+      "Practice interviews, review common questions, and prepare with AI-assisted coaching.",
   },
   {
     icon: TrendingUp,
     title: "Career Insights",
     description:
-      "Get recommendations to improve your job search strategy.",
+      "Receive personalized recommendations to improve your job search strategy and application success.",
   },
 ];
 

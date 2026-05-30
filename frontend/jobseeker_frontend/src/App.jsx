@@ -3,8 +3,9 @@ import ProtectedRoute from "./components/ProtectedRoute";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+
 import Dashboard from "./pages/Dashboard";
+import Legal from "./pages/Legal";
 
 function App() {
   return (
@@ -16,13 +17,15 @@ function App() {
 
         <Route path="/login" element={<Login />} />
 
-        <Route path="/signup" element={<Signup />} />
+        
 
         <Route path="/dashboard" element={
           <ProtectedRoute>
             <Dashboard />
           </ProtectedRoute>
         } />
+
+        <Route path="/legal" element={<Legal />} />
 
       </Routes>
 
