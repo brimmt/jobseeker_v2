@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { FileText, Mail, Search, Briefcase, User } from "lucide-react";
 import TopNav from "../components/TopNav";
 import Sidebar from "../components/Sidebar";
+import AscendNevara from "../assets/AscendNevara-cut.png";
+
 
 const dashboardCards = [
   {
@@ -49,12 +51,21 @@ function Dashboard() {
 
       <main className="mx-auto max-w-6xl px-6 pt-24 pb-12">
         <div className="mb-8">
-          <h1 className="mb-2 text-3xl font-semibold text-[var(--primary)]">
-            Welcome to JobSeeker AI
-          </h1>
+          <div className="mb-2 flex items-center gap-2 text-3xl font-semibold text-[var(--primary)]">
+          
+                  <img
+                    src={AscendNevara}
+                    alt="Nevara Ascend"
+                    className="h-7 w-auto"
+                  />
+                    <span className="rounded-full bg-black-100 px-2 py-1 text-xs font-medium text-black-700">
+    BETA
+  </span>
+
+          </div>
 
           <p className="text-lg text-[var(--secondary)]">
-            Your intelligent companion for job search success
+            Resume building, job tracking, and career tools in one place.
           </p>
         </div>
 

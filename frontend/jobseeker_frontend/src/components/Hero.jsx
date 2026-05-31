@@ -1,6 +1,7 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import JobseekerAILogo from "../assets/Jobseeker_AI.png";
+import AscendNevara from "../assets/AscendNevara-cut.png";
 
 function Hero() {
   return (
@@ -63,15 +64,14 @@ function Hero() {
           <div className="relative rounded-2xl border border-[var(--border)] bg-white p-6 shadow-2xl">
             <div className="relative mb-6 h-16 border-b border-[var(--border)]">
   <div className="absolute left-0 top-1/2 flex -translate-y-1/2 gap-2">
-    <div className="h-3 w-3 rounded-full bg-red-400" />
-    <div className="h-3 w-3 rounded-full bg-yellow-400" />
-    <div className="h-3 w-3 rounded-full bg-green-400" />
+    
+     
   </div>
 
   <img
-    src={JobseekerAILogo}
+    src={AscendNevara}
     alt="JobSeeker AI logo"
-    className="absolute left-1/2 top-1/2 h-10 w-auto -translate-x-1/2 -translate-y-1/2 object-contain"
+    className="absolute left-1/2 top-1/2 h-7 w-auto -translate-x-1/2 -translate-y-1/2 object-contain"
   />
 </div>
 

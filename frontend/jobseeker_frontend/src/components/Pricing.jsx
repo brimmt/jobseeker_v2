@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const plans = [
   {
-    name: "Free",
+    name: "Explorer",
     price: "$0",
     period: "during beta",
     description: "Perfect for exploring JobSeeker AI",
@@ -19,7 +19,7 @@ const plans = [
   },
 
   {
-    name: "Pro",
+    name: "Ascender",
     price: "TBD",
     period: "after beta",
     description: "For active job seekers",
@@ -36,7 +36,7 @@ const plans = [
   },
 
   {
-    name: "Premium",
+    name: "Summiter",
     price: "TBD",
     period: "after beta",
     description: "For professionals and power users",

@@ -2,6 +2,7 @@ import { Mail} from "lucide-react";
 import LinkedIn from "../assets/linkedin-svgrepo-com.svg";
 import JobseekerAILogo from "../assets/Jobseeker_AI.png";
 import legal from "../pages/Legal";
+import AscendNevara from "../assets/AscendNevara-cut.png";
 
 
 function Footer() {

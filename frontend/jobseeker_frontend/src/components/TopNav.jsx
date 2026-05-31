@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { UserRoundCog, LogOut, Settings } from "lucide-react";
+import AscendNevara from "../assets/AscendNevara-cut.png";
 
 function TopNav() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -37,9 +38,9 @@ function TopNav() {
 
         <div className="flex items-center gap-3">
 
-          <h1 className="text-xl font-semibold text-white ">
-            JobSeeker AI
-          </h1>
+          <div className="text-xl font-light 300 text-white ">
+            Nevara <span className="text-[var(--secondary)]">Ascend</span>
+          </div>
 
         </div>
 

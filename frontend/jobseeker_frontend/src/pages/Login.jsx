@@ -32,7 +32,8 @@ function Login() {
         }
 
         console.log("Login:", data);
-        localStorage.setItem("accessToken", data.access);
+        localStorage.setItem("accessToken", data.access || data.access_token);
+        localStorage.setItem("refreshToken", data.refresh || data.refresh_token);
         navigate("/dashboard");
       } catch (error) {
         console.error("Login error:", error);
