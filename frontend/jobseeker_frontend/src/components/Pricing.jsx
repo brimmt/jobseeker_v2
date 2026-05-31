@@ -5,8 +5,8 @@ const plans = [
   {
     name: "Explorer",
     price: "$0",
-    period: "during beta",
-    description: "Perfect for exploring JobSeeker AI",
+    period: "monthly",
+    description: "Perfect for exploring Nevara Ascend",
     features: [
       "Resume creation",
       "Cover letter generation",
@@ -135,7 +135,7 @@ function Pricing() {
 
               </div>
 
-              {plan.name === "Free" ? (
+              {plan.name === "Explorer" ? (
                   <a
               href="https://www.linkedin.com/company/nevaratech"
               target="_blank"

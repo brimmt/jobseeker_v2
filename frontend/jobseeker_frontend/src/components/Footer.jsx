@@ -13,7 +13,7 @@ function Footer() {
           <div className="md:col-span-2">
             <div className="relative mb-4 h-12 w-48 overflow-hidden">
   <img
-    src={JobseekerAILogo}
+    src={AscendNevara}
     alt="JobSeeker AI"
     className="absolute left-0 top-1/2 h-15 w-auto -translate-y-1/2 object-contain"
   />
@@ -25,7 +25,7 @@ function Footer() {
             </p>
 
             <p className="mt-3 text-sm text-[var(--secondary)]">
-              Built by NevaraTech · Currently in beta
+              Built by NevaraTech • Public Beta
             </p>
             
             <div className="mt-3 flex items-center gap-4">
@@ -120,7 +120,7 @@ function Footer() {
 
         <div className="border-t border-[var(--border)] pt-8">
           <p className="text-sm text-[var(--foreground)]/60">
-            © {new Date().getFullYear()} JobSeeker AI. Built by NevaraTech. All rights reserved.
+            © {new Date().getFullYear()} Nevara Ascend. Built by NevaraTech. All rights reserved.
           </p>
         </div>
       </div>

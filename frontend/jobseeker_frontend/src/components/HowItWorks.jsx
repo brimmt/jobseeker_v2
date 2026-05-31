@@ -40,7 +40,7 @@ function HowItWorks() {
           </h2>
 
           <p className="mx-auto max-w-2xl text-lg text-[var(--foreground)]/70">
-            From resume creation to application tracking, JobSeeker AI helps
+            From resume creation to application tracking, Nevara Ascend helps
             simplify the job search process.
           </p>
         </div>

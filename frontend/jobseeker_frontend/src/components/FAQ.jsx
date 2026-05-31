@@ -3,9 +3,9 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "How does JobSeeker AI work?",
+    question: "How does Nevara Ascend work?",
     answer:
-      "JobSeeker AI helps you create resumes, generate cover letters, and organize job applications using AI-assisted tools.",
+      "Nevara Ascend helps simplify the job search process by bringing resume creation, cover letter generation, job discovery, and application tracking into one workspace.\n\nUsers can create and refine application materials with AI-assisted tools, organize opportunities, and manage their progress throughout the job search journey.\n\nOur goal is to reduce stress, save time, and help professionals stay focused on landing the right opportunity.",
   },
   {
     question: "Is my data secure?",
@@ -25,12 +25,12 @@ const faqs = [
   {
     question: "Can I use it for free?",
     answer:
-      "Yes. The free plan includes limited resume and cover letter generation, plus basic job tracking.",
+      "Yes. Nevara Ascend offers a free plan called the Explorer Tier. It includes limited resume and cover letter generation, as well as basic job tracking features. We believe professional career tools should be accessible to everyone. \n\nThe Explorer Tier allows users to experience the platform at no cost, while optional paid plans provide expanded capabilities, higher limits, and additional automation features for power users.",
   },
   {
-    question: "What makes JobSeeker AI different?",
+    question: "What makes Nevara Ascend different?",
     answer:
-      "It brings resume creation, cover letters, job search, and application tracking into one simple workspace.",
+      "Nevara Ascend is more than a resume builder. It brings resume creation, cover letters, job search, and application tracking into one workspace designed to reduce the stress and complexity of the job hunt. \n\nOur mission is to support professionals throughout their career journey, not just during the application process. From preparing application materials to organizing opportunities and managing career growth, Ascend is built to help users stay focused, confident, and in control. \n\nAs part of the NevaraTech ecosystem, Ascend also embraces responsible AI practices. We continuously research sustainable and efficient approaches to AI development with the goal of delivering valuable tools while minimizing unnecessary resource consumption.",
   },
 ];
 
@@ -53,7 +53,7 @@ function FAQ() {
           </h2>
 
           <p className="text-lg text-[var(--foreground)]/70">
-            Everything you need to know about JobSeeker AI.
+            Everything you need to know about Nevara Ascend.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ function FAQ() {
                 </Accordion.Trigger>
               </Accordion.Header>
 
-              <Accordion.Content className="px-6 pb-5 pt-0 leading-relaxed text-[var(--foreground)]/70">
+              <Accordion.Content className="px-6 pb-5 pt-0 leading-relaxed text-[var(--foreground)]/70 whitespace-pre-line">
                 {faq.answer}
               </Accordion.Content>
             </Accordion.Item>

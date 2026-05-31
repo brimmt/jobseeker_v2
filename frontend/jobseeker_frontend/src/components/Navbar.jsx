@@ -13,6 +13,7 @@ function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <img src={AscendNevara} alt="JobSeeker AI logo" className="h-10 md:h-7 w-auto" />
+            BETA
             
           </Link>
            
