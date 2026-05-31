@@ -51,8 +51,8 @@ function Hero() {
             </div>
 
             <div>
-              <div className="text-2xl font-bold text-[var(--primary)]">Eco Focus</div>
-              <div className="text-sm text-[var(--foreground)]/60">Assisted Workflow</div>
+              <div className="text-2xl font-bold text-[var(--primary)]">AI Powered</div>
+              <div className="text-sm text-[var(--foreground)]/60">Efficiency Focused</div>
             </div>
           </div>
         </div>
