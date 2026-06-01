@@ -119,7 +119,7 @@ function Login() {
             </div>
 
             <div className="flex items-center justify-between">
-              <label className="flex cursor-pointer items-center gap-2">
+              {/* <label className="flex cursor-pointer items-center gap-2">
                 <input
                   type="checkbox"
                   className="h-4 w-4 rounded border-[var(--border)] text-[var(--primary)] focus:ring-[var(--primary)]/20"
@@ -133,6 +133,7 @@ function Login() {
               <a href="#" className="text-sm text-[var(--primary)] hover:underline">
                 Forgot password?
               </a>
+              */}
             </div>
 
             <button
@@ -155,7 +156,7 @@ function Login() {
                 Sign up for free
               </Link>
               {*/}
-              Sign up is coming soon!
+              Additional beta invitations coming soon.
             </p>
           </div>
         </div>
