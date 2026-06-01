@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Mail, Lock, ArrowRight, FileText } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import AscendNevara from "../assets/AscendNevara-cut.png";
 
 function Login() {
   const navigate = useNavigate();
@@ -48,13 +49,17 @@ function Login() {
 
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
-          <Link to="/" className="mb-6 inline-flex items-center justify-center gap-3">
-            
+          <div className="mb-6 flex items-start justify-center gap-1">
+                <img
+                  src={AscendNevara}
+                  alt="Nevara Ascend logo"
+                  className="h-10 w-auto"
+                />
 
-            <span className="text-xl font-semibold text-[var(--primary)]">
-              JobSeeker <span className="text-[var(--secondary)]">AI</span>
-            </span>
-          </Link>
+                <span className="text-xs font-semibold uppercase text-[var(--primary)]">
+                  Beta
+                </span>
+              </div>
 
           <h1 className="mb-2 text-3xl font-bold text-[var(--primary)]">
             Welcome back
@@ -141,13 +146,16 @@ function Login() {
 
           <div className="mt-6 text-center">
             <p className="text-sm text-[var(--foreground)]/70">
-              Don&apos;t have an account?{" "}
+              {/* Don&apos;t have an account?{" "}
+              {/*}
               <Link
                 to="/signup"
                 className="font-medium text-[var(--primary)] hover:underline"
               >
                 Sign up for free
               </Link>
+              {*/}
+              Sign up is coming soon!
             </p>
           </div>
         </div>
