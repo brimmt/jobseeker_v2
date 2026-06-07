@@ -65,7 +65,7 @@ function Navbar() {
                 Features
               </a>
               <a href="#pricing" className="text-[var(--foreground)]/70 hover:text-[var(--foreground)]">
-                Pricing
+                Memberships
               </a>
               <a href="#dashboard-preview" className="text-[var(--foreground)]/70 hover:text-[var(--foreground)]">
                 Dashboard

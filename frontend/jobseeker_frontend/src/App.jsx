@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 
 import Dashboard from "./pages/Dashboard";
 import Legal from "./pages/Legal";
+import Resume from "./pages/Resume";
 
 function App() {
   return (
@@ -22,6 +23,12 @@ function App() {
         <Route path="/dashboard" element={
           <ProtectedRoute>
             <Dashboard />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/resume" element={
+          <ProtectedRoute>
+            <Resume />
           </ProtectedRoute>
         } />
 
