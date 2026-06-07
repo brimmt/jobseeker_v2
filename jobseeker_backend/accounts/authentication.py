@@ -34,6 +34,7 @@ class SupabaseJWTAuthentication(BaseAuthentication):
         supabase_user_id = str(supabase_user["id"])
         email = supabase_user["email"]
 
+        # Try to find existing profile by supabase_user_id
         profile = UserProfile.objects.filter(
             supabase_user_id=supabase_user_id
         ).select_related("user").first()
@@ -41,17 +42,30 @@ class SupabaseJWTAuthentication(BaseAuthentication):
         if profile:
             return (profile.user, None)
 
-        user = User.objects.create_user(
-            username=email,
-            email=email,
-        )
-        user.set_unusable_password()
-        user.save()
+        # No profile found, check if user exists by email
+        user = User.objects.filter(email=email).first()
+        
+        if not user:
+            # Create new user if doesn't exist
+            user = User.objects.create_user(
+                username=email,
+                email=email,
+            )
+            user.set_unusable_password()
+            user.save()
 
-        UserProfile.objects.create(
-            user=user,
-            supabase_user_id=supabase_user_id,
-        )
+        # Check if this user already has a profile
+        try:
+            profile = UserProfile.objects.get(user=user)
+            # Update existing profile with supabase_user_id
+            profile.supabase_user_id = supabase_user_id
+            profile.save()
+        except UserProfile.DoesNotExist:
+            # Create new profile for this user
+            profile = UserProfile.objects.create(
+                user=user,
+                supabase_user_id=supabase_user_id,
+            )
 
         return (user, None)
 

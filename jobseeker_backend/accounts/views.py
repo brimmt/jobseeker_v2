@@ -3,9 +3,18 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import api_view, permission_classes
-import supabase
+from supabase import create_client
+import os
+from dotenv import load_dotenv
 from .serializers import CurrentUserProfileSerializer, LoginInSerializer, SignUpSerializer
 from rest_framework import status
+
+load_dotenv()
+
+supabase = create_client(
+    os.getenv("SUPABASE_URL"),
+    os.getenv("SUPABASE_ANON_KEY")
+)
 
 class MeView(APIView):
     permission_classes = [IsAuthenticated]
@@ -69,9 +78,10 @@ def signup(request):
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def signin(request):
-    serializer = LoginInSerializer(data=request.data)    #I don't know why im adding this, i guess im validating that this is an actual serilizer
+    serializer = LoginInSerializer(data=request.data)
 
     if not serializer.is_valid():
+        print(f"Serializer errors: {serializer.errors}")  # Debug logging
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     data = serializer.validated_data
@@ -90,10 +100,11 @@ def signin(request):
         
         return Response({
             "message": "Sign in successful",
-            "access_token": auth_response.session.access_token,
-            "refresh_token": auth_response.session.refresh_token,
+            "access": auth_response.session.access_token,
+            "refresh": auth_response.session.refresh_token,
         })
-    except Exception:
+    except Exception as e:
+        print(f"Login error: {str(e)}")  # Debug logging
         return Response({
             "detail": "Login failed."
         }, status=status.HTTP_400_BAD_REQUEST)

@@ -52,7 +52,7 @@ class SignUpSerializer(serializers.Serializer):
 
 
 class LoginInSerializer(serializers.Serializer):
-    email = serializers.EmailField()
-    password = serializers.CharField(write_only=True, min_length=8)
+    email = serializers.EmailField(required=True)
+    password = serializers.CharField(write_only=True, min_length=8, required=True)
 
 
