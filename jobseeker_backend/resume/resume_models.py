@@ -14,7 +14,7 @@ class Resume(models.Model):
     TEMPLATE_TYPE_CHOICES = [
         ("classic", "Classic"),
         ("modern", "Modern"),
-        ("creative", "Creative"),
+        ("ats", "ATS Friendly"),
     ]
 
 

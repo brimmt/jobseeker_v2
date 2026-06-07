@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.permissions import IsAuthenticated
-from resume_logic import create_resume, list_resumes, get_resume_by_id, update_resume_by_id, delete_resume_by_id
-
+from .resume_logic import create_resume, list_resumes, get_resume_by_id, update_resume_by_id, delete_resume_by_id
+from accounts.authentication import SupabaseJWTAuthentication
 
 
 # Create your views here
@@ -13,6 +13,7 @@ from resume_logic import create_resume, list_resumes, get_resume_by_id, update_r
 # Create Resume View
 
 @api_view(["POST"])
+@authentication_classes([SupabaseJWTAuthentication])
 @permission_classes([IsAuthenticated])
 def create_resume_view(request):
     user = request.user
@@ -27,6 +28,7 @@ def create_resume_view(request):
 # List Resumes for UserView
 
 @api_view(["GET"])
+@authentication_classes([SupabaseJWTAuthentication])
 @permission_classes([IsAuthenticated])
 def list_resumes_view(request):
     user = request.user
@@ -40,6 +42,7 @@ def list_resumes_view(request):
 # Get Resume by ID view
 
 @api_view(["GET"])
+@authentication_classes([SupabaseJWTAuthentication])
 @permission_classes([IsAuthenticated])
 def get_resume_view(request, resume_id):
     user = request.user
@@ -53,6 +56,7 @@ def get_resume_view(request, resume_id):
 # Update Resume by ID view
 
 @api_view(["PUT"])
+@authentication_classes([SupabaseJWTAuthentication])
 @permission_classes([IsAuthenticated])
 def update_resume_view(request, resume_id, data):
     user = request.user
@@ -66,6 +70,7 @@ def update_resume_view(request, resume_id, data):
 # Delete Resume by Id VieW
 
 @api_view(["DELETE"])
+@authentication_classes([SupabaseJWTAuthentication])
 @permission_classes([IsAuthenticated])
 def delete_resume_view(request, resume_id):
     user = request.user
